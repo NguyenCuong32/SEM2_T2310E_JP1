@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="inherist">
+    <output-path>$PROJECT_DIR$/out/artifacts/inherist</output-path>
+    <root id="archive" name="inherist.jar" />
+  </artifact>
+</component>
