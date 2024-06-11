@@ -16,5 +16,10 @@ public class Main {
         car.makePayment();
         car.MakeProduct();
         car.ShowPrice();
+        show();
+        Bike.getName();
+    }
+    private static void show() {
+        System.out.println("Manufacture");
     }
 }

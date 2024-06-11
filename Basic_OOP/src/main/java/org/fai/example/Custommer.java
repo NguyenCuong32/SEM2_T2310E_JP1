@@ -1,7 +1,7 @@
 package org.fai.example;
 
 public class Custommer {
-    public String customerId;
+    private String customerId;
     private String customerName;
     private String customerAddress;
     private int customerAge;
