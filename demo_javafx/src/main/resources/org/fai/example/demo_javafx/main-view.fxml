@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import impl.org.controlsfx.skin.GridRow?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.fai.example.demo_javafx.StudentController"
+            prefHeight="800.0" prefWidth="800.0">
+    <children>
+        <MenuBar AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="0">
+            <Menu text="File">
+                <MenuItem text="New" onAction="#onNewClicked"></MenuItem>
+                <MenuItem text="Open"></MenuItem>
+                <MenuItem text="Recent Project"></MenuItem>
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem text="Undo"></MenuItem>
+                <MenuItem text="Redo"></MenuItem>
+                <MenuItem text="Copy"></MenuItem>
+                <MenuItem text="Cut"></MenuItem>
+            </Menu>
+        </MenuBar>
+    </children>
+    <children>
+        <VBox AnchorPane.topAnchor="32" AnchorPane.leftAnchor="16">
+            <Label text="Name"></Label>
+            <TextField fx:id="txtName"></TextField>
+            <Label text="Age"></Label>
+            <TextField fx:id="txtAge"></TextField>
+            <Label text="Address"></Label>
+            <TextField fx:id="txtAddress"></TextField>
+
+            <Button text="Add" onMouseClicked="#onAddStudent"></Button>
+            <Label fx:id="lblInformation"></Label>
+        </VBox>
+    </children>
+    <GridPane fx:id="grdStudent" vgap="8" hgap="8" gridLinesVisible="true" AnchorPane.leftAnchor="200" AnchorPane.topAnchor="32">
+        <children>
+            <Label style="--block-text-color: red" prefWidth="80" GridPane.rowIndex="0" GridPane.columnIndex="0">Name</Label>
+            <Label prefWidth="40" GridPane.rowIndex="0" GridPane.columnIndex="1">Age</Label>
+            <Label prefWidth="80" GridPane.rowIndex="0" GridPane.columnIndex="2">Address</Label>
+        </children>
+    </GridPane>
+
+</AnchorPane>
