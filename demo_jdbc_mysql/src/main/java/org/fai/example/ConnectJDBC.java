@@ -25,7 +25,7 @@ public class ConnectJDBC {
         }
         return instance;
     }
-    public void ConnectJDBC(){
+    public ConnectJDBC(){
         try {
             System.out.println("URL: "+ url);
             this.conn = DriverManager.getConnection(url,username,password);
