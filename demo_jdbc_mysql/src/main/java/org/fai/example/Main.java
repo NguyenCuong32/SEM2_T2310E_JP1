@@ -13,5 +13,10 @@ public class Main {
         classRoom.setClass_name("T2306E");
         classRoom.setNumber_member(20);
         classRoomRepository.saveClassRoom(classRoom);
+        System.out.println("Class rooms:");
+        var students = classRoomRepository.getAllClassRooms();
+        for (var student : students) {
+            System.out.println(student.getClass_name() + " " + student.getNumber_member());
+        }
     }
 }
