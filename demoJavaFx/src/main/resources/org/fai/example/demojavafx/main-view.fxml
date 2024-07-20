@@ -9,25 +9,38 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.fai.example.demojavafx.controller.StudentController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="800.0" prefWidth="600.0">
 
-    <VBox AnchorPane.topAnchor="8">
-        <Label text="First name"></Label>
-        <TextField fx:id="txtFirstName"></TextField>
+    <VBox spacing="8.0" alignment="TOP_LEFT" styleClass="vbox" AnchorPane.topAnchor="8.0" AnchorPane.leftAnchor="8.0">
+        <Label text="First name" styleClass="label"/>
+        <TextField fx:id="txtFirstName" styleClass="text-field"/>
+        <Label text="Last name" styleClass="label"/>
+        <TextField fx:id="txtLastName" styleClass="text-field"/>
+        <Label text="Email" styleClass="label"/>
+        <TextField fx:id="txtEmail" styleClass="text-field"/>
+        <Label text="Id Class" styleClass="label"/>
+        <TextField fx:id="txtIdClass" styleClass="text-field"/>
+        <Button fx:id="btnAdd" text="Add" onMouseClicked="#onAddStudent" styleClass="button"/>
+        <Label fx:id="lblMessage"></Label>
+        <Label>Student Id</Label>
+        <TextField fx:id="txtStudentId"></TextField>
+        <Button text="Delete" fx:id="btnDelete" onMouseClicked="#onDeleteStudent"></Button>
+        <Button text="Get" fx:id="btnGet" onMouseClicked="#onGetStudent"></Button>
+        <Button text="Edit" fx:id="btnEdit" onMouseClicked="#onUpdateStudent"></Button>
     </VBox>
-    <VBox AnchorPane.topAnchor="56">
-        <Label text="Last name"></Label>
-        <TextField fx:id="txtLastName"></TextField>
-    </VBox>
-    <VBox AnchorPane.topAnchor="96">
-        <Label text="Email"></Label>
-        <TextField fx:id="txtEmail"></TextField>
-    </VBox>
-    <VBox AnchorPane.topAnchor="136">
-        <Label text="Id Class"></Label>
-        <TextField fx:id="txtIdClass"></TextField>
-    </VBox>
-    <VBox AnchorPane.topAnchor="180">
-        <Button fx:id="btnAdd" onMouseClicked="#onAddStudent" >Add</Button>
-    </VBox>
+<!--    <VBox AnchorPane.topAnchor="56">-->
+<!--        <Label text="Last name"></Label>-->
+<!--        <TextField fx:id="txtLastName"></TextField>-->
+<!--    </VBox>-->
+<!--    <VBox AnchorPane.topAnchor="96">-->
+<!--        <Label text="Email"></Label>-->
+<!--        <TextField fx:id="txtEmail"></TextField>-->
+<!--    </VBox>-->
+<!--    <VBox AnchorPane.topAnchor="136">-->
+<!--        <Label text="Id Class"></Label>-->
+<!--        <TextField fx:id="txtIdClass"></TextField>-->
+<!--    </VBox>-->
+<!--    <VBox AnchorPane.topAnchor="180">-->
+<!--        <Button fx:id="btnAdd" onMouseClicked="#onAddStudent" >Add</Button>-->
+<!--    </VBox>-->
 </AnchorPane>

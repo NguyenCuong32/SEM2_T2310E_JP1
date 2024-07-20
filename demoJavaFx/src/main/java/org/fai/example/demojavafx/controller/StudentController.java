@@ -18,15 +18,59 @@ public class StudentController {
     @FXML
     private TextField txtIdClass;
     @FXML
+    private Label lblMessage;
+    @FXML
+    private TextField txtStudentId;
+    @FXML
     public void initialize(){
 
     }
     public void insertStudent(Student student){
-        StudentRepository studentRepository = new StudentRepository();;
-        studentRepository.save(student);
+        try {
+            StudentRepository studentRepository = new StudentRepository();
+            studentRepository.save(student);
+            lblMessage.setText("Student inserted successfully");
+        }
+        catch (Exception e){
+            lblMessage.setText(e.getMessage());
+        }
     }
     public void onAddStudent(){
         Student student = new Student(txtFirstName.getText(),txtLastName.getText(),txtEmail.getText(),Integer.parseInt(txtIdClass.getText()));
         insertStudent(student);
+    }
+    public void onDeleteStudent(){
+        try{
+            StudentRepository studentRepository = new StudentRepository();
+            studentRepository.delete(Integer.parseInt(txtStudentId.getText()));
+        }catch (Exception e){
+            lblMessage.setText(e.getMessage());
+        }
+    }
+
+    public void onGetStudent(){
+        StudentRepository studentRepository = new StudentRepository();
+        Student student = studentRepository.findById(Integer.parseInt(txtStudentId.getText()));
+        txtFirstName.setText(student.getFirst_name());
+        txtLastName.setText(student.getLast_name());
+        txtEmail.setText(student.getEmail());
+        txtIdClass.setText(student.getId_class().toString());
+    }
+    public void onUpdateStudent(){
+        try {
+            StudentRepository studentRepository = new StudentRepository();
+            String firstName = txtFirstName.getText();
+            String lastName = txtLastName.getText();
+            String email = txtEmail.getText();
+            String idClass = txtIdClass.getText();
+            Integer studentId = Integer.parseInt(txtStudentId.getText());
+
+            Student student = new Student(firstName,lastName,email,Integer.parseInt(idClass));
+            student.setId(studentId);
+            studentRepository.update(student);
+            lblMessage.setText("Student updated successfully");
+        } catch (Exception e){
+            lblMessage.setText(e.getMessage());
+        }
     }
 }
