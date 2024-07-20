@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.fai.example.demojavafx.controller.StudentController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <VBox AnchorPane.topAnchor="8">
+        <Label text="First name"></Label>
+        <TextField fx:id="txtFirstName"></TextField>
+    </VBox>
+    <VBox AnchorPane.topAnchor="56">
+        <Label text="Last name"></Label>
+        <TextField fx:id="txtLastName"></TextField>
+    </VBox>
+    <VBox AnchorPane.topAnchor="96">
+        <Label text="Email"></Label>
+        <TextField fx:id="txtEmail"></TextField>
+    </VBox>
+    <VBox AnchorPane.topAnchor="136">
+        <Label text="Id Class"></Label>
+        <TextField fx:id="txtIdClass"></TextField>
+    </VBox>
+    <VBox AnchorPane.topAnchor="180">
+        <Button fx:id="btnAdd" onMouseClicked="#onAddStudent" >Add</Button>
+    </VBox>
+</AnchorPane>
