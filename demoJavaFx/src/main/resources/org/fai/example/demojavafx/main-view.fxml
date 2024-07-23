@@ -6,6 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import org.controlsfx.control.GridView?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.fai.example.demojavafx.controller.StudentController"
@@ -27,20 +28,7 @@
         <Button text="Delete" fx:id="btnDelete" onMouseClicked="#onDeleteStudent"></Button>
         <Button text="Get" fx:id="btnGet" onMouseClicked="#onGetStudent"></Button>
         <Button text="Edit" fx:id="btnEdit" onMouseClicked="#onUpdateStudent"></Button>
+        <Button text="Show All Data" fx:id="btnShowAll" onMouseClicked="#onShowAllData"></Button>
+        <TableView fx:id="tableView"></TableView>
     </VBox>
-<!--    <VBox AnchorPane.topAnchor="56">-->
-<!--        <Label text="Last name"></Label>-->
-<!--        <TextField fx:id="txtLastName"></TextField>-->
-<!--    </VBox>-->
-<!--    <VBox AnchorPane.topAnchor="96">-->
-<!--        <Label text="Email"></Label>-->
-<!--        <TextField fx:id="txtEmail"></TextField>-->
-<!--    </VBox>-->
-<!--    <VBox AnchorPane.topAnchor="136">-->
-<!--        <Label text="Id Class"></Label>-->
-<!--        <TextField fx:id="txtIdClass"></TextField>-->
-<!--    </VBox>-->
-<!--    <VBox AnchorPane.topAnchor="180">-->
-<!--        <Button fx:id="btnAdd" onMouseClicked="#onAddStudent" >Add</Button>-->
-<!--    </VBox>-->
 </AnchorPane>

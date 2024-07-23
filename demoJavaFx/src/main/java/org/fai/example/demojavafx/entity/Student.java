@@ -14,6 +14,9 @@ public class Student {
         this.id_class = id_class;
     }
 
+    public Student() {
+    }
+
     public Integer getId() {
         return id;
     }

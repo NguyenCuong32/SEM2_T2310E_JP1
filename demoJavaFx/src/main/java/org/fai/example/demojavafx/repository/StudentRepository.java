@@ -3,7 +3,9 @@ package org.fai.example.demojavafx.repository;
 import org.fai.example.demojavafx.entity.Student;
 
 import java.sql.CallableStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentRepository implements IStudentRepository {
@@ -26,7 +28,24 @@ public class StudentRepository implements IStudentRepository {
 
     @Override
     public List<Student> findAll() {
-        return List.of();
+        try{
+            var conn = ConnectJDBC.getInstance().getConnection();
+            List<Student> students = new ArrayList<>();
+            CallableStatement callStmt = conn.prepareCall("{call SP_GET_ALL_STUDENTS()}");
+            ResultSet rs = callStmt.executeQuery();
+            while (rs.next()) {
+                Student student = new Student();
+                student.setId(rs.getInt("id"));
+                student.setFirst_name(rs.getString("first_name"));
+                student.setLast_name(rs.getString("last_name"));
+                students.add(student);
+            }
+            return students;
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
