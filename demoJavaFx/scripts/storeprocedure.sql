@@ -44,3 +44,11 @@ update student set first_name=first_name,
 where id =student_id;
 end;
 
+drop procedure if exists SP_GET_ALL_STUDENTS;
+create procedure SP_GET_ALL_STUDENTS()
+begin
+select id,first_name,last_name,cr.class_name from 03_university.student left join
+                                                  `03_university`.class_room
+                                                      cr on student.id_class = cr.id_class;
+end;
+CALL SP_GET_ALL_STUDENTS
